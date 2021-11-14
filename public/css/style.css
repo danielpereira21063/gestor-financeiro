@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Mono', monospace;
+}
+
+body {
+    background-color: rgb(253 255 122 / 23%);
+    margin: 0 auto;
+    padding: 0;
+    min-height: 100%;
+    position: relative;
+}
+
+nav {
+    background-color: #ffeb3b1a;
+    width: 100%;
+    height: 80px;
+}
+
+nav .tituloSite {
+    color: #d49000;
+}
+
+.navbarContent {
+    display: flex;
+    line-height: 80px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 100px;
+}
+
+@media (max-width: 840px) {
+    .navbarContent {
+        display: block;
+        padding: 0px 10px;
+    }
+
+    .navbarContent ul {
+        display: none !important;
+    }
+}
+
+.navbarContent .logoSite {
+    display: flex;
+    height: 80px;
+    align-items: center;
+}
+
+.navbarContent .logoSite img {
+    /* width: 50px; */
+    height: 50px;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.navbarContent ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbarContent ul li {
+    margin: 0px 10px;
+}
+
+.navbarContent ul li a {
+    text-decoration: none;
+    color: #D49000;
+    transition: ease-in .25s;
+    border-radius: 8px;
+    padding: 10px 20px;
+}
+
+.navbarContent ul li a:hover {
+    text-decoration: none;
+    background-color: #EE9C0F;
+    color: #ffffff;
+}
+
+.sectionPrincipal {
+    height: 80%;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+
+.cardUser {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.cardUser .saudacoesUser {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .cardUser .saudacoesUser h6 {
+        font-size: 14px;
+    }
+}
+
+.cardInfo {
+    /* background-color: rgb(255, 0, 0); */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100px;
+    color: #fff;
+    text-align: center;
+}
+
+@media(max-width: 840px) {
+    .cardInfo {
+        /* flex-direction: column; */
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        height: 200px;
+    }
+
+    .cardInfo .info {
+        width: 48% !important;
+    }
+
+    .cardInfo h5 {
+        font-size: 13px;
+    }
+
+    .cardInfo .info p {
+        color: rgb(223 223 223);
+        font-size: 9px;
+    }
+}
+
+
+.cardInfo .info {
+    padding: 10px;
+    margin: 0px 2px;
+    width: 200px;
+    border-radius: 8px;
+    height: 90px;
+}
+
+
+.cardInfo .info:hover {
+    cursor: pointer;
+}
+
+.cardInfo h5 {
+    font-size: 16px;
+}
+
+.cardInfo .info p {
+    color: rgb(223 223 223);
+    font-size: 13px;
+}
+
+
+.cardInfo .info.infoTotal {
+    background-color: rgba(0, 80, 126, 0.9);
+}
+
+.cardInfo .info.infoTotal h5 {
+    color: rgb(255, 255, 255);
+}
+
+
+.cardInfo .info.infoTotal:hover {
+    background-color: rgba(0, 80, 126, 1);
+}
+
+.cardInfo .info.infoSaldoMensal {
+    background-color: rgba(0, 126, 42, .9);
+}
+
+.cardInfo .info.infoSaldoMensal:hover {
+    background-color: rgba(0, 126, 42, 1);
+}
+
+.cardInfo .info.infoGastoMensal {
+    background-color: rgba(165, 1, 1, .9);
+}
+
+.cardInfo .info.infoGastoMensal:hover {
+    background-color: rgba(165, 1, 1, 1);
+}
+
+
+.ultimosMovimentos .movimento {
+    height: 50px;
+    width: 100%;
+}
+
+.ultimosMovimentos .btns {
+    display: flex;
+    /* flex-direction: row; */
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.ultimosMovimentos .btns a {
+    text-decoration: none;
+}
+
+
+
+/* ==================================== */
+/* LOGIN */
+
+.cardLogin {
+    width: 100%;
+    height: 420px;
+    background-color: red;
+}
+
+/* FIM LOGIN */
+/* ===================================== */

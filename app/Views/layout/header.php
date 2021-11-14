@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="<?= BASE_URL . '/css/style.css' ?>">
     <title>Controle financeiro</title>
 </head>
 
@@ -22,7 +22,7 @@
         <nav>
             <div class="navbarContent">
                 <div class="logoSite">
-                    <img src="./img/coin.png">
+                    <img src=" <?= BASE_URL.'/img/coin.png' ?>">
                     <span class="tituloSite">Gestor financeiro</span>
                 </div>
                 <ul>
@@ -39,31 +39,3 @@
             </div>
         </nav>
     </header>
-    <section class="sectionPrincipal">
-        <div class="container">
-            <div class="row d-flex justify-content-center">
-                <div class="cardInfo">
-                    <div class="info infoUltimos">
-                        <p>Útlimos movimentos</p>
-                    </div>
-                    <div class="info infoTotal">
-                        <p>Saldo total</p>
-                    </div>
-                    <div class="info infoSaldoMensal">
-                        <p>Saldo mensal</p>
-                    </div>
-                    <div class="info infoGastoMensal">
-                        <div>Gasto mensal</div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <footer class="text-center" style="width: 100%; height: 30px;">
-        <p><a>&copy; Daniel Pereira Sanches</a></p>
-    </footer>
-</body>
-
-</html>
