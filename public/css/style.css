@@ -79,6 +79,7 @@ nav .tituloSite {
 
 .sectionPrincipal {
     height: 80%;
+    padding: 10px;
 }
 
 .conteudo {
@@ -89,12 +90,22 @@ nav .tituloSite {
 
 
 .cardUser {
-    width: 100%;
+    width: 48%;
     height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-radius: 10px;
+}
+
+@media(max-width: 975px) {
+    .cardUser {
+        width: 100%;
+    }
+
+    .cardInfo {
+        width: 100% !important;
+    }
 }
 
 .cardUser .saudacoesUser {
@@ -108,11 +119,10 @@ nav .tituloSite {
 }
 
 .cardInfo {
-    /* background-color: rgb(255, 0, 0); */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
+    width: 48%;
     height: 100px;
     color: #fff;
     text-align: center;
@@ -122,21 +132,21 @@ nav .tituloSite {
     .cardInfo {
         /* flex-direction: column; */
         flex-wrap: wrap;
-        justify-content: space-evenly;
-        height: 200px;
+        height: 160px;
     }
 
     .cardInfo .info {
         width: 48% !important;
+        height: 75px !important;
     }
 
     .cardInfo h5 {
-        font-size: 13px;
+        font-size: 13px !important;
     }
 
     .cardInfo .info p {
         color: rgb(223 223 223);
-        font-size: 9px;
+        font-size: 11px !important;
     }
 }
 
@@ -215,12 +225,75 @@ nav .tituloSite {
 
 /* ==================================== */
 /* LOGIN */
+.divLogin {
+    position: relative;
+    width: 420px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 0px 0px 20px 3px;
+    border-radius: 15px;
+    padding: 5px;
+    margin-top: 30px;
+}
+
+@media(max-width: 840px) {
+    .divLogin {
+        width: 600px;
+    }
+
+    .divLogin img.undraw-image {
+        display: none;
+    }
+
+    .cardLogin {
+        border: 0px !important;
+    }
+
+}
+
+@media(max-width: 600px) {
+    .divLogin {
+        width: 100%;
+    }
+}
 
 .cardLogin {
-    width: 100%;
+    border-radius: 25px;
+    width: 400px;
     height: 420px;
-    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
 }
+
+.cardLogin img {
+    width: 80px;
+    position: absolute;
+    top: 10px;
+}
+
+.cardLogin .grupoInput {
+    margin: 5px 0px;
+}
+
+.cardLogin input {
+    width: 320px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid #fdc540;
+    background-color: #faf1e2;
+}
+
+.cardLogin input:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+}
+
+
 
 /* FIM LOGIN */
 /* ===================================== */

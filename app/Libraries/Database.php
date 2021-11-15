@@ -1,5 +1,5 @@
 <?php
-
+require_once(APP.'/config.php');
 class Database {
     private $dbh;
     private $stmt;
@@ -8,11 +8,11 @@ class Database {
         try {
             $this->dbh = new \PDO(
                 'mysql:'.
-                'host='.'127.0.0.1'.';'.
-                'dbname='.'gestor_saldo'.';'.
+                'host='.MYSQL_HOST.';'.
+                'dbname='.MYSQL_DB.';'.
                 'charset='.'utf8',
-                'root',
-                '',
+                MYSQL_USERNAME,
+                MYSQL_PASSWD,
                 array( \PDO::ATTR_PERSISTENT => true, \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION )
             );
         } catch ( \PDOException $pe ) {

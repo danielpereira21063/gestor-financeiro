@@ -14,6 +14,8 @@ class Route {
                 unset($url[1]);
             }
         }
+        $this->controller = ucwords($this->controller);
+
         require_once '../app/Controllers/' . $this->controller . '.php';
         $this->controller = new $this->controller;
 

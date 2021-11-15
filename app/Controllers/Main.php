@@ -3,8 +3,8 @@
 
 class Main extends Controller {
     public function index() {
-        Main::view('layout/header');
-        Main::view('home/index');
-        Main::view('layout/footer');
+        Controller::view('layout/header');
+        Controller::view('home/index');
+        Controller::view('layout/footer');
     }
 }

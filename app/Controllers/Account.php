@@ -1,9 +1,9 @@
 <?php
 class Account extends Controller {
     public function login() {
-        Account::view('layout/header');
-        Account::view('login');
-        Account::view('layout/footer');
+        Controller::view('layout/header');
+        Controller::view('login');
+        Controller::view('layout/footer');
     }
 
     public function logout() {
