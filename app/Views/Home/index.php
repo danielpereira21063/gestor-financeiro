@@ -16,7 +16,7 @@
                                 <i class="bi bi-person-circle"></i>
                                 Olá, Daniel.
                             </h5>
-                            <h6 class="mt-3">Essas são informações básicas sobre seu saldo no mês atual.</h6>
+                            <h6 class="mt-3">Essas são informações básicas sobre seu saldo.</h6>
                         </div>
                     </div>
 

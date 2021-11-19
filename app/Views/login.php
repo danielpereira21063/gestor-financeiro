@@ -7,18 +7,36 @@
 
     -->
             <div class="cardLogin">
-                <h5 class="my-4">Login</h5>
-                <img src=" <?= BASE_URL.'/img/coin.png' ?>" width="100px">
+                <h5 class="">
+                    Login
+                </h5>
+                <hr>
                 <div class="grupoInput">
                     <label>Usuário</label>
                     <br>
+                    <i class="bi bi-person-circle"></i>
                     <input type="text" placeholder="Usuário">
                 </div>
                 <div class="grupoInput">
                     <label>Senha</label>
                     <br>
+                    <i class="bi bi-shield-lock-fill"></i>
                     <input type="text" placeholder="Senha">
                 </div>
+
+                <button class="btnEntrar">Entrar</button>
+                <div class="criarConta">
+                    Não tem uma conta?
+                    <a href="<?=BASE_URL . '/account/criar'?>">
+                        Criar conta
+                    </a>
+                </div>
+
+                <p style="font-size: 12px; position: absolute; bottom: 0;">
+                    <a style="text-decoration: none; color: #3d3d3d" href="">&copy; Daniel Pereira Sanches
+
+                    </a>
+                </p>
             </div>
        
     </div>

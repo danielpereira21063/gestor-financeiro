@@ -8,8 +8,7 @@ body {
     background-color: rgb(253 255 122 / 23%);
     margin: 0 auto;
     padding: 0;
-    min-height: 100%;
-    position: relative;
+    height: 100vh !important;
 }
 
 nav {
@@ -82,6 +81,13 @@ nav .tituloSite {
     padding: 10px;
 }
 
+@media(max-width: 840px) {
+    .sectionPrincipal {
+        height: auto;
+        padding: 5px;
+    }
+}
+
 .conteudo {
     display: flex;
     flex-direction: column;
@@ -150,6 +156,11 @@ nav .tituloSite {
     }
 }
 
+@media(max-width: 640px) {
+    .cardInfo .info.infoTotal {
+        flex-basis: 100%;
+    }
+}
 
 .cardInfo .info {
     padding: 10px;
@@ -157,11 +168,13 @@ nav .tituloSite {
     width: 200px;
     border-radius: 8px;
     height: 90px;
+    transition: all .3s;
 }
 
 
 .cardInfo .info:hover {
     cursor: pointer;
+    transform: scale(.95);
 }
 
 .cardInfo h5 {
@@ -277,14 +290,46 @@ nav .tituloSite {
 
 .cardLogin .grupoInput {
     margin: 5px 0px;
+    position: relative;
+}
+
+.cardLogin .grupoInput i {
+    position: absolute;
+    top: 32px;
+    left: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .cardLogin input {
     width: 320px;
-    height: 40px;
+    height: 45px;
     border-radius: 8px;
-    border: 1px solid #fdc540;
-    background-color: #faf1e2;
+    padding: 0px 45px;
+    border: 0;
+    background-color: #f9e5c5;
+    color: #3d3d3d;
+}
+
+.cardLogin .btnEntrar {
+    width: 320px;
+    border: 0;
+    background: #ff9800;
+    height: 40px;
+    border-radius: 5px;
+    color: #fff;
+    margin: 15px 0px;
+    transition: all .3s;
+}
+
+.cardLogin .btnEntrar:hover {
+    background: #ffaa2a;
+    transform: scale(1.01)
+}
+
+.cardLogin .grupoInput label {
+    font-size: 15px;
+    margin-bottom: 4px;
 }
 
 .cardLogin input:focus {
@@ -293,7 +338,10 @@ nav .tituloSite {
     outline: 0;
 }
 
-
+.cardLogin .criarConta {
+    font-size: 13px !important;
+    margin-top: 18px;
+}
 
 /* FIM LOGIN */
 /* ===================================== */

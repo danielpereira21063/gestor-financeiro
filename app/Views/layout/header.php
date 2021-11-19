@@ -27,7 +27,7 @@
                 </div>
                 <ul>
                     <li>
-                        <a href="">Inicio</a>
+                        <a href="<?=BASE_URL?>">Inicio</a>
                     </li>
                     <li>
                         <a href="">Sobre</a>
@@ -36,7 +36,7 @@
                         <?php if(isset($_SESSION['id_usuario'])): ?>
                             <a href="" class="userName"><i class="bi bi-person-circle"></i> Daniel</a>
                         <?php else: ?>
-                         <a href="<?=BASE_URL . '/account/login'?>">Entrar</a>
+                         <a href="<?= BASE_URL . '/account/login'?>">Entrar</a>
                         <?php endif; ?>
                     </li>
                 </ul>
