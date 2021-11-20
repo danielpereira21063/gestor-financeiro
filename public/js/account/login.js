@@ -4,7 +4,8 @@ const appLogin = {
             dados: {
                 usuario: '',
                 senha: ''
-            }
+            },
+            acessoNegado: false
         }
     },
 
@@ -17,6 +18,9 @@ const appLogin = {
                 url: '/gestor-financeiro/Account/postLogin',
                 success: (resp) => {
                     console.log(resp);
+                    if(resp != "200") {
+                        thisVue.acessoNegado = true;
+                    }
                 }
             });
         },

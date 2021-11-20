@@ -17,10 +17,9 @@ class Account extends Controller {
 
     public function postLogin() {
         if(!empty($_POST)) {
+            $resposta = $this->model->fazerLogin($_POST);
 
-            // echo json_encode($_POST);
-            $resp = $this->model->fazerLogin($_POST);
-            echo $resp;
+            echo $resposta;
         }
     }
 

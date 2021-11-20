@@ -44,10 +44,20 @@ class AccountModel extends Database {
     }
 
     public function fazerLogin($dados) {
-        $usuario = "daniel";
-        $sql = "SELECT * FROM usuarios WHERE nomeUsuario = '$usuario'";
+        $usuario = $dados["usuario"];
+        $usuario = str_replace("'", "", $usuario);
+        $sql = "SELECT * FROM usuarios WHERE `nomeUsuario` = '$usuario'";
         $this->query($sql);
-        // $this->bind(':user', $usuario);
-        return $this->rowCount();
+        $result = count($this->results());
+
+
+
+        if($result == 0) return '403'; //access_denied
+
+        $senha = $this->results()[0]->senha;
+
+        $permitido = password_verify($dados['senha'], $senha);
+
+        return $permitido == 1 ? "200" : "403";
     }
 }

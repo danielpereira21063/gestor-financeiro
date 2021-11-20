@@ -10,16 +10,16 @@
                         </h4>
                         <hr>
                         <div class="grupoInput">
-                            <label>Usuário</label>
+                            <label></label>
                             <br>
                             <i class="bi bi-person-circle"></i>
-                            <input v-model="dados.user" type="text" placeholder="@daniel">
+                            <input v-bind:class="{'acessoNegado': acessoNegado}" v-model="dados.usuario" type="text" placeholder="Nome de usuário">
                         </div>
                         <div class="grupoInput">
-                            <label>Senha</label>
+                            <label></label>
                             <br>
                             <i class="bi bi-shield-lock-fill"></i>
-                            <input v-model="dados.senha" type="text" placeholder="******">
+                            <input v-bind:class="{'acessoNegado': acessoNegado}" v-model="dados.senha" type="text" placeholder="Senha">
                         </div>
 
                         <button v-on:click="fazerLogin()" class="btnEntrar">Entrar</button>
