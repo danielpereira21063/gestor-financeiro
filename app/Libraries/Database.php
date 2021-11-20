@@ -1,5 +1,6 @@
 <?php
 require_once(APP.'/config.php');
+
 class Database {
     private $dbh;
     private $stmt;

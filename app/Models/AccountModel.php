@@ -1,7 +1,7 @@
 <?php
-require_once APP.'/Libraries/Database.php';
+require_once (APP.'/Libraries/Database.php');  
 
-class GestorModel extends Database {
+class AccountModel extends Database {
     public function salvar($data) {
         
         $sql = "SELECT MAX(id_movimento) as max_id from movimentos";
@@ -41,5 +41,13 @@ class GestorModel extends Database {
 
 
         return false;
+    }
+
+    public function fazerLogin($dados) {
+        $usuario = "daniel";
+        $sql = "SELECT * FROM usuarios WHERE nomeUsuario = '$usuario'";
+        $this->query($sql);
+        // $this->bind(':user', $usuario);
+        return $this->rowCount();
     }
 }
