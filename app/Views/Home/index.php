@@ -1,80 +1,87 @@
 <?php
-    // if(!isset($_SESSION['id_usuario'])):
-    //     header('Location:' . BASE_URL. '/account/login');
-    // else:
+    if(!isset($_SESSION['id_user'])):
+        header('Location:' . BASE_URL. '/account/login');
+    else:
+		// var_dump($_SESSION);
 ?>
-<section class="sectionPrincipal">
-    <div class="container">
-        <div class="row d-flex justify-content-center">
 
-            <div class="conteudo">
-                <div class="semEstilo">
+<section class="sectionPrincipal" id="index">
+	<h2 style="text-transform: capitalize;" class="text-center mt-3">Olá, <?=$_SESSION["nome_user"]?></h5>
 
-                    <div class="cardUser float-lg-start">
-                        <div class="saudacoesUser">
-                            <h5>
-                                <i class="bi bi-person-circle"></i>
-                                Olá, Daniel.
-                            </h5>
-                            <h6 class="mt-3">Essas são informações básicas sobre seu saldo.</h6>
-                        </div>
-                    </div>
-
-                    <div class="cardInfo mt-3 d-none d-lg-flex float-end">
-                        <div class="info infoTotal">
-                            <p>Saldo total</p>
-                            <h5>R$: 2.000,00</h5>
-                        </div>
-                        <div class="info infoSaldoMensal">
-                            <p>Saldo mensal</p>
-                            <h5>R$ 430,00</h5>
-                        </div>
-                        <div class="info infoGastoMensal">
-                            <p>Gasto mensal</p>
-                            <h5>R$ -125,00</h5>
-                        </div>
-                    </div>
-                </div>
+		<div class="container">
 
 
-                <div class="cardInfo mt-3 d-lg-none d-flex">
-                    <div class="info infoTotal">
-                        <p>Saldo total</p>
-                        <h5>R$: 2.000,00</h5>
-                    </div>
-                    <div class="info infoSaldoMensal">
-                        <p>Saldo mensal</p>
-                        <h5>R$ 430,00</h5>
-                    </div>
-                    <div class="info infoGastoMensal">
-                        <p>Gasto mensal</p>
-                        <h5>R$ -125,00</h5>
-                    </div>
-                </div>
+			<h4>Saldo atual</h4>
 
-                <!-- <hr> -->
-                <h5 class="mt-5 mb-3">Últimos movimentos</h1>
-                    <div class="ultimosMovimentos">
-                        <div class="btns mb-2">
-                            <a class="novo" href="#">Novo</a>
-                            <a class="todos" href="#">Ver todos</a>
-                        </div>
-                        <div class="movimento my-2">
-                            Informação
-                        </div>
-                        <hr>
-                        <div class="movimento my-2">
-                            Informação
-                        </div>
-                        <hr>
-                        <div class="movimento my-2">
-                            Informação
-                        </div>
-                    </div>
+			<h1 id="balance" class="balance">R$ {{ultimoMovimento.saldoTotal}}</h1>
 
-            </div>
+			<div class="inc-exp-container">
+				<div>
+					<h4>Receitas</h4>
+					<p id="money-plus" class="money plus">+ R$0.00</p>
+				</div>
 
-        </div>
-    </div>
+				<div>
+					<h4>Despesas</h4>
+					<p id="money-minus" class="money minus">- R$0.00</p>
+				</div>
+			</div>
+
+			<h3>Transações</h3>
+
+			<ul id="transactions" class="transactions">
+				<li v-for="mov in movimentosUser" v-bind:class="{'minus': mov.valor < 0, 'plus': mov.valor > 0}">
+					<span class="text-truncate">{{mov.descricao}}</span>
+					<span class="text-truncate">
+						<span v-bind:class="{'text-danger': mov.valor < 0, 'text-success': mov.valor > 0}">{{mov.valor}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{mov.data}}
+					</span>
+						<button class="delete-btn">x</button>
+				</li>
+			</ul>
+
+			<button class="btnAdicionar" data-bs-toggle="modal" data-bs-target="#novaTransacao">Adicionar transação</button>
+
+			<div class="modal fade" tabindex="-1" id="novaTransacao">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title">Nova transação</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							<form id="form">
+								<div class="form-control mb-3">
+									<label for="text">Descrição</label>
+									<input autofocus type="text" id="text" placeholder="Descrição da transação" />
+									<label for="text">Categoria</label>
+									<select class="form-select form-select-md">
+										<option>AAA</option>
+									</select>
+									<label>Local</label>
+									<input autofocus type="text" id="text" placeholder="Local da transação" />
+								</div>
+
+								<div class="form-control">
+									<label for="amount">Valor <br />
+										<small>
+											(<span class="text-danger">negativo</span> - despesas,&nbsp;
+											<span class="text-success">positivo</span> - receitas
+											)
+											</small>
+									</label>
+									<input type="number" id="amount" placeholder="Valor da transação" />
+								</div>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btnCancelar">Cancelar</button>
+							<button type="button" class="btnSalvar">Salvar</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 </section>
-<?php //endif; ?>
+
+<script src="<?= BASE_URL. '/js/indexController.js' ?>"></script>
+<?php endif; ?>

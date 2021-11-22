@@ -20,7 +20,9 @@ const appLogin = {
                     console.log(resp);
                     if(resp != "200") {
                         thisVue.acessoNegado = true;
+                        return;
                     }
+                    location.href = "/"
                 }
             });
         },

@@ -1,18 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto Mono', monospace;
+    /* font-family: 'Roboto Mono', monospace;    */
+    font-family: 'Lato', sans-serif !important;
 }
-
-body {
-    /* background-color: rgb(253 255 122 / 23%); */
-    background-color: #123;
-    color:#fff;
-    margin: 0 auto;
-    padding: 0;
-    height: 100vh !important;
+header {
+    width: 100%;
 }
-
 nav {
     background-color: #123;
     width: 100%;
@@ -80,161 +76,216 @@ nav .tituloSite {
 
 .sectionPrincipal {
     height: 85%;
+    width: 50%;
     padding: 10px;
 }
 
-@media(max-width: 840px) {
+@media(max-width: 900px) {
     .sectionPrincipal {
         height: auto;
+        width: 100%;
         padding: 5px;
     }
 }
 
-.conteudo {
+
+
+/* HOME/INDEX */
+
+:root {
+    --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #f7f7f7;
     display: flex;
     flex-direction: column;
-    padding: 10px;
-}
-
-
-.cardUser {
-    width: 48%;
-    height: 100px;
+    align-items: center;
+    justify-content: center;
+    /* height: 100vh; */
+    margin: 0;
+    font-family: 'Lato', sans-serif !important;
+  }
+  
+  .container {
+    margin: 30px auto;
+    /* width: 350px;     */
+  }
+  
+  h1 {
+    letter-spacing: 1px;
+    margin: 0;
+    color: #2e75cc;
+  }
+  
+  h3 {
+    border-bottom: 1px solid #bbb;
+    padding-bottom: 10px;
+    margin: 40px 0 10px;
+  }
+  
+  h4 {
+    margin: 0;
+    text-transform: uppercase;
+  }
+  
+  .inc-exp-container {
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    padding: 20px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    border-radius: 10px;
-}
-
-@media(max-width: 975px) {
-    .cardUser {
-        width: 100%;
-    }
-
-    .cardInfo {
-        width: 100% !important;
-    }
-}
-
-.cardUser .saudacoesUser {
-    width: 100%;
-}
-
-@media (max-width: 768px) {
-    .cardUser .saudacoesUser h6 {
-        font-size: 14px;
-    }
-}
-
-.cardInfo {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 48%;
-    height: 100px;
-    color: #fff;
+    margin: 20px 0;
+  }
+  
+  .inc-exp-container > div {
+    flex: 1;
     text-align: center;
-}
-
-@media(max-width: 840px) {
-    .cardInfo {
-        /* flex-direction: column; */
-        flex-wrap: wrap;
-        height: 160px;
-    }
-
-    .cardInfo .info {
-        width: 48% !important;
-        height: 75px !important;
-    }
-
-    .cardInfo h5 {
-        font-size: 13px !important;
-    }
-
-    .cardInfo .info p {
-        color: rgb(223 223 223);
-        font-size: 11px !important;
-    }
-}
-
-@media(max-width: 640px) {
-    .cardInfo .info.infoTotal {
-        flex-basis: 100%;
-    }
-}
-
-.cardInfo .info {
-    padding: 10px;
-    margin: 0px 2px;
-    width: 200px;
-    border-radius: 8px;
-    height: 90px;
-    transition: all .3s;
-}
-
-
-.cardInfo .info:hover {
-    cursor: pointer;
-    transform: scale(.95);
-}
-
-.cardInfo h5 {
+  }
+  
+  .inc-exp-container > div:first-of-type {
+    border-right: 1px solid #dedede;
+  }
+  
+  .money {
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin: 5px 0;
+  }
+  
+  .money.plus {
+    color: #2ecc71;
+  }
+  
+  .money.minus {
+    color: #c0392b;
+  }
+  
+  label {
+    display: inline-block;
+    margin: 10px 0;
+  }
+  
+  input[type='text'],
+  input[type='number'] {
+    border: 1px solid #dedede;
+    border-radius: 2px;
+    display: block;
     font-size: 16px;
-}
-
-.cardInfo .info p {
-    color: rgb(223 223 223);
-    font-size: 13px;
-}
-
-
-.cardInfo .info.infoTotal {
-    background-color: rgba(0, 80, 126, 0.9);
-}
-
-.cardInfo .info.infoTotal h5 {
-    color: rgb(255, 255, 255);
-}
-
-
-.cardInfo .info.infoTotal:hover {
-    background-color: rgba(0, 80, 126, 1);
-}
-
-.cardInfo .info.infoSaldoMensal {
-    background-color: rgba(0, 126, 42, .9);
-}
-
-.cardInfo .info.infoSaldoMensal:hover {
-    background-color: rgba(0, 126, 42, 1);
-}
-
-.cardInfo .info.infoGastoMensal {
-    background-color: rgba(165, 1, 1, .9);
-}
-
-.cardInfo .info.infoGastoMensal:hover {
-    background-color: rgba(165, 1, 1, 1);
-}
-
-
-.ultimosMovimentos .movimento {
-    height: 50px;
+    padding: 10px;
     width: 100%;
-}
-
-.ultimosMovimentos .btns {
+  }
+  
+  .btn {
+    cursor: pointer;
+    background-color: #9c88ff;
+    box-shadow: var(--box-shadow);
+    color: #fff;
+    border: 0;
+    display: block;
+    font-size: 16px;
+    margin: 10px 0 30px;
+    padding: 10px;
+    width: 100%;
+  }
+  
+  .btn:focus,
+  .delete-btn:focus {
+    outline: 0;
+  }
+  
+  .transactions {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 40px;
+  }
+  
+  .transactions li {
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    color: #333;
     display: flex;
-    /* flex-direction: row; */
-    align-items: center;
     justify-content: space-between;
-    width: 100%;
+    position: relative;
+    padding: 10px;
+    margin: 10px 0;
+  }
+  
+  .transactions li.plus {
+    border-right: 5px solid #2ecc71;
+  }
+  
+  .transactions li.minus {
+    border-right: 5px solid #c0392b;
+  }
+  
+  .delete-btn {
+    cursor: pointer;
+    background-color: #e74c3c;
+    border: 0;
+    color: #fff;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 2px 5px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-100%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .transactions li:hover .delete-btn {
+    opacity: 1;
+  }
+
+
+
+.btnAdicionar {
+    background-color: #114d9c;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin: 0;
+    color: #fff;
+    transition: all .35s;
+}
+.btnAdicionar:hover {
+    background-color: #2974d6;
+    transform: scale(1.02);
 }
 
-.ultimosMovimentos .btns a {
-    text-decoration: none;
+.btnSalvar {
+    background-color: #119c5b;
+    border: none;
+    padding: 5px 50px;
+    border-radius: 3px;
+    margin: 0;
+    color: #fff;
+    transition: all .35s;
 }
+.btnSalvar:hover {
+    background-color: #17c258;
+    transform: scale(1.02);
+}
+
+.btnCancelar {
+    background-color: #dc3545;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+}
+.btnCancelar:hover {
+    background-color: #d83545;
+}
+/* FIM HOME/INDEX */
+
+
 
 
 
@@ -248,7 +299,7 @@ nav .tituloSite {
     align-items: center;
     box-shadow: 0px 0px 20px 3px rgba(0,0,0,.25);
     border-radius: 15px;
-    padding: 30px 10px;
+    padding: 45px 10px;
     margin-top: 30px;
 }
 
@@ -304,9 +355,9 @@ nav .tituloSite {
     height: 45px;
     border-radius: 8px;
     padding: 0px 45px;
-    border: 2px solid #162c41;
-    background-color: #162c41;
-    color: #ffffff;
+    border: 2px solid #c7c7c7;
+    background-color: #f7f7f7;
+    color: #202020;
     transition: all .50s;
 }
 
@@ -321,7 +372,8 @@ nav .tituloSite {
     transition: all .3s;
 }
 
-.cardLogin input.accessoNegado {
+.cardLogin input.acessoNegado {
+    transition: all 5s;
     border: 2px solid #ff5a5a !important;
 }
 
@@ -334,6 +386,14 @@ nav .tituloSite {
     font-size: 15px;
     margin-bottom: 4px;
 }
+
+.cardLogin .textNegado {
+    transition: all 1s !important;
+    transform: scale(.95);
+    top: 10px;
+    font-size: 30px;
+}
+
 
 .cardLogin input:focus {
     box-shadow: 0 0 0 0;
