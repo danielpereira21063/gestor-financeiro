@@ -12,7 +12,7 @@ class AccountModel extends Database {
 
 
 
-        if($result == 0) return '403'; //access_denied
+        if($result == 0) return false; //access_denied
 
         $dadosUser = $this->results()[0];
         $senha = $dadosUser->senha;
@@ -25,10 +25,10 @@ class AccountModel extends Database {
             $_SESSION["nome_user"] = $dadosUser->nomeUsuario;
             $_SESSION["email"] = $dadosUser->email;
 
-            return '200';
+            return true;
         }
 
-        return '403';
+        return false;
 
     }
 }

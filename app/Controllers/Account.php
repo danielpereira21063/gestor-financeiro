@@ -16,10 +16,18 @@ class Account extends Controller {
     }
 
     public function postLogin() {
-        if(!empty($_POST)) {
-            $resposta = $this->model->fazerLogin($_POST);
+        if(isset($_POST) && !empty($_POST)) {
+            $autorizado = $this->model->fazerLogin($_POST);
+            if(isset($_SESSION['loginErrado'])) unset($_SESSION['loginErrado']);
 
-            echo $resposta;
+            if(!$autorizado) {
+                $_SESSION['loginErrado'] = 'Acesso negado!';
+                $_SESSION['loginBackup'] = $_POST['usuario'];
+                header('Location: ' . BASE_URL . '/account/login');
+                return;
+            }
+
+            header('Location: ' . BASE_URL);
         }
     }
 
