@@ -4,6 +4,8 @@ require_once (APP.'/Libraries/Database.php');
 class AccountModel extends Database {
 
     public function fazerLogin($dados) {
+        $this->connect();
+
         $usuario = $dados["usuario"];
         $usuario = str_replace("'", "", $usuario);
         $sql = "SELECT * FROM usuarios WHERE `nomeUsuario` = '$usuario'";
@@ -28,6 +30,7 @@ class AccountModel extends Database {
             return true;
         }
 
+        $this->close();
         return false;
 
     }

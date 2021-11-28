@@ -54,4 +54,3 @@
 </section>
 
 <?php if(isset($_SESSION['loginErrado'])) unset($_SESSION['loginErrado']) ?>
-<script src="<?=BASE_URL . '/js/account/login.js'?>"></script>

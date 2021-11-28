@@ -5,7 +5,7 @@ class Database {
     private $dbh;
     private $stmt;
 
-    public function __construct() {
+    public function connect() {
         try {
             $this->dbh = new \PDO(
                 'mysql:'.

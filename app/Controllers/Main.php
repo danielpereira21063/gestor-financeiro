@@ -15,10 +15,10 @@ class Main extends Controller {
         Controller::view('layout/footer');
     }
 
-    public function getDadosUsuario() {
+    public function getMovimentos() {
         if(isset($_SESSION["id_user"])) {
             $id = $_SESSION['id_user'];
-            $dadosUsuario = $this->model->getDadosUsuario($id);
+            $dadosUsuario = $this->model->getMovimentos($id);
 
             echo $dadosUsuario;
         }
