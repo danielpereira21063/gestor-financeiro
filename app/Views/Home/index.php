@@ -16,14 +16,16 @@
 	<h2 style="text-transform: capitalize;" class="text-center mt-3">Olá, <?=$_SESSION["nome_user"]?></h5>
 
 		<div class="container">
-
-
-			<h4>Saldo total</h4>
-
-			COLOCAR MES AQUI
-			<br><br>
-
-			<h1 id="balance" class="balance">R$ {{detalhes.saldo}}</h1>
+			<div class="d-flex justify-content-between">
+				<div>
+					<h5>Saldo total</h5>
+					<h1 style="font-size: 20px;" id="balance" class="balance">R$ {{detalhes.saldo}}</h1>
+				</div>
+				<div>
+					<h5>Balanco mensal</h5>
+					<h1 style="font-size: 20px;" id="balance" class="balance">R$ {{(Number(detalhes.ganhoMensal) + (Number(detalhes.gastoMensal))).toFixed(2)}}</h1>
+				</div>
+			</div>
 
 			<div class="inc-exp-container">
 				<div>
@@ -39,6 +41,35 @@
 
 			<h3>Transações</h3>
 
+			<div class="row d-flex justify-content-between mb-4">
+			<div class="col-lg-6">
+				<select class="form-select form-control form-control-sm">
+					<option selected disabled>Selecione o ano</option>
+					<option>2021</option>
+					<option>2022</option>
+					<option>2023</option>
+					<option>2024</option>
+					<option>2025</option>
+				</select>
+			</div>
+			<div class="col-lg-6">
+				<select class="form-select form-control form-control-sm">
+					<option selected disabled>Selecione o mês</option>
+					<option>Janeiro</option>
+					<option>Fevereiro</option>
+					<option>Março</option>
+					<option>Abril</option>
+					<option>Maio</option>
+					<option>Junho</option>
+					<option>Julho</option>
+					<option>Agosto</option>
+					<option>Setembro</option>
+					<option>Outubro</option>
+					<option>Novembro</option>
+					<option>Dezembro</option>
+				</select>
+			</div>
+			</div>
 			<ul id="transactions" class="transactions">
 				<li v-on:click="verMovimento(mov)" style="cursor: pointer" v-for="mov in movimentosUser" v-bind:class="{'minus': mov.valor < 0, 'plus': mov.valor > 0}">
 					<span class="text-truncate">{{mov.descricao}}</span>

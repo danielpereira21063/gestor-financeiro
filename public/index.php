@@ -14,6 +14,24 @@ $db = new Database();
 $route = new Route();
 
 
+//atualiza o saldo
+
+// $sql = "SELECT * FROM movimentos JOIN saldo WHERE saldo.idMovimento = movimentos.id_movimento order by idMovimento;";
+// $db->connect();
+// $db->query($sql);
+// $r = $db->results();
+// var_dump($r);
+
+// $valores = [];
+// for($i = 0; $i < count($r); $i++) {
+//     if($i < 33) {
+//         $valores[$i] = $r[$i+1]->idMovimento . ' === ' . $r[0]->saldoAtual += ($r[$i+1]->valor);
+//     }
+// }
+// var_dump($valores);
+////////////////
+
+
 //SQL PARA ATUALIZAR O SALDO ATUAL DE ACORDO COM OS MOVIMENTOS
 
 // $sql = "SELECT * FROM movimentos";

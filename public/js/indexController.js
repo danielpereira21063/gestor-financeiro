@@ -61,9 +61,11 @@ const appIndex = {
                         if (JSON.parse(resp) == true) {
                             $('#modalTransacao').modal('hide');
                             toastr.success('Adiconado com sucesso!');
+                            thisVue.getMovimentos();
+                            thisVue.getDetalhes();
                         }
                     }
-                });
+                })
             }
         },
 

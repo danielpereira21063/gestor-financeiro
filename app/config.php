@@ -10,7 +10,7 @@ if($ambiente == "d" /*desenvolvimento*/) {
     define('BASE_URL', 'http://127.0.0.1/gestor-financeiro');
     define('MYSQL_HOST', '127.0.0.1');
     define('MYSQL_PORT', '3306');
-    define('MYSQL_DB', 'gestor-financeiro_teste');
+    define('MYSQL_DB', 'gestor-financeiro');
     define('MYSQL_USERNAME', 'root');
     define('MYSQL_PASSWD', '');
 } else {

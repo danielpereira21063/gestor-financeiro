@@ -21,7 +21,6 @@ class MovimentosModel extends Database {
     public function saveNewMovimento($dados) {
         $this->connect();
         
-        
         $idUser = $_SESSION['id_user'];
         
         extract($dados);
@@ -32,7 +31,7 @@ class MovimentosModel extends Database {
         
         $sql = "";
 
-        $sql = "INSERT INTO movimentos (id_usuario, categoria, valor, `local`, descricao) VALUES ('$idUser', '$categoria', '$valor', '$descricao', '$local');";
+        $sql = "INSERT INTO movimentos (id_usuario, categoria, valor, `local`, descricao) VALUES ('$idUser', '$categoria', '$valor', '$local', '$descricao');";
         $this->query($sql);
         $this->execute();
         
@@ -50,8 +49,8 @@ class MovimentosModel extends Database {
         $this->query($sql);
         $this->execute();
 
-        return true;
         $this->close();
+        return true;
     }
 
     public function editarMovimento($dados) {
@@ -111,7 +110,7 @@ class MovimentosModel extends Database {
             "ganhoMensal" => $ganhoMensal->ganhoMes
         ];
 
-        return $retorno;
         $this->close();
+        return $retorno;
     }
 }
